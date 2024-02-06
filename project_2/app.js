@@ -93,3 +93,26 @@ var add = function () {
 };
 var addNumbers = add(5, 10, 2);
 console.log(addNumbers); // 17
+var Department = /** @class */ (function () {
+    function Department(n) {
+        this.name = n;
+    }
+    return Department;
+}());
+var it = new Department('IT department');
+console.log(it); // Department { name: 'IT department' }
+var user1 = {
+    name: 'John Doe',
+    age: 30,
+    greet: function (phrase) {
+        console.log("HI ".concat(phrase, " ").concat(this.name)); // Hi there - I am John Doe
+    },
+};
+var user2 = {
+    name: 'Maria',
+    age: 30,
+    greet: function (phrase) {
+        console.log("".concat(phrase, " ").concat(this.name)); // Hi there - I am John Doe
+    },
+};
+user2.greet('Hi there - I am'); // Hi there - I am John Doe

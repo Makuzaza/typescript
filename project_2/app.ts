@@ -106,3 +106,40 @@ console.log('activeHobbies:', activeHobbies); // activeHobbies: [ 'Hiking', 'Spo
         };
         const addNumbers = add(5, 10, 2);
         console.log(addNumbers); // 17
+
+class Department {
+    name: string;
+
+    constructor(n: string) {
+        this.name = n;
+    }
+}
+
+const it = new Department('IT department');
+console.log(it); // Department { name: 'IT department' }
+
+interface Person {  
+    name: string;  
+    age: number;
+    greet(phrase: string): void;
+}
+
+const user1: Person = {
+    name: 'John Doe',
+    age: 30,
+    greet(phrase: string) {
+      console.log(`HI ${phrase} ${this.name}`); // Hi there - I am John Doe
+    },
+  };
+
+  const user2: Person = {
+    name: 'Maria',
+    age: 30,
+    greet(phrase: string) {
+      console.log(`${phrase} ${this.name}`); // Hi there - I am John Doe
+    },
+  };
+   
+  user2.greet('Hi there - I am'); // Hi there - I am John Doe
+
+  
