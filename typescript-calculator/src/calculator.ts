@@ -52,9 +52,14 @@ this.updateDisplay();
  */
 
 inputNumber(num: string): void {
-    this.currentInput += num;
+    // If current input is "0", replace it with the new number
+    if (this.currentInput === '0') {
+        this.currentInput = num;
+    } else {
+        this.currentInput += num;
+    }
     this.updateDisplay();
-  }
+}
 
 /**
  * Sets the current operation and moves the current input value to the previous input value.
@@ -77,7 +82,7 @@ inputOperator(op: string): void {
  * Clears the current and previous input values and the operation and updates the display.
  */
   clearDisplay(): void {
-    this.currentInput = '';
+    this.currentInput = '0';
     this.previousInput = '';
     this.operation = null;
      // Update display
